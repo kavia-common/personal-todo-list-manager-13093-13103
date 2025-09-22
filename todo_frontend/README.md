@@ -1,82 +1,36 @@
-# Lightweight React Template for KAVIA
+# Todo Frontend (React) — Ocean Professional
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A minimalist, modern React UI for the Personal Todo List Manager. Connects to a FastAPI backend and supports full CRUD: add, edit, delete, and mark completed. Styled with the Ocean Professional palette.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Ocean Professional theme with clean, minimalist design
+- Full CRUD with loading/error states
+- Smooth transitions, subtle shadows, rounded corners
+- Search and filter (All/Active/Completed)
+- Structured components and a slim API layer
 
 ## Getting Started
 
-In the project directory, you can run:
+- Install: `npm install`
+- Start dev server: `npm start` (http://localhost:3000)
+- Ensure backend is running at http://localhost:3001
 
-### `npm start`
+Optional: configure backend URL via env:
+- Copy `.env.example` to `.env` and set:
+  - `REACT_APP_API_BASE_URL=http://localhost:3001`
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-### `npm test`
+- `src/services/api.js` — API client for FastAPI backend
+- `src/components/TodoForm.js` — add/edit form
+- `src/components/TodoItem.js` — single item view
+- `src/components/TodoList.js` — list wrapper
+- `src/styles/theme.css` — Ocean Professional styles
+- `src/App.js` — application shell and state
 
-Launches the test runner in interactive watch mode.
+## Notes
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The backend OpenAPI is used as reference for routes and shapes.
+- The app handles optimistic UI for toggling completion.
+- Errors are displayed non-intrusively above the list.
